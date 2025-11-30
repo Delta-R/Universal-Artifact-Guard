@@ -89,7 +89,7 @@ The code structure of this repository is carefully organized. Below are the func
     ```
 4.  **Model Evaluation**:
     ```bash
-    python validation.py --name experiment_uag --checkpoint_dir checkpoints/
+    python test.py --name experiment_uag --checkpoint_dir checkpoints/
     ```
 5.  **Single Image Test**:
     ```bash
@@ -103,3 +103,4 @@ The code structure of this repository is carefully organized. Below are the func
 In terms of overall structure, UAG uses common Convolutional Networks or Vision Transformers as feature extraction backbones, on top of which it explicitly models the differences between **forgery artifact features** and **real content features**. Through specialized branches and constraints, the framework encourages the network to focus on forgery clues that are difficult for the human eye to perceive directly, such as high-frequency details, texture distortions, and statistical inconsistencies.
 
 To improve cross-generator and cross-domain generalization capabilities, UAG introduces multi-source data mixing and differential contrast strategies during training: on the one hand, the model is jointly optimized on samples from different synthesis methods and various resolution/quality conditions; on the other hand, by explicitly pulling closer the "structural similarity between real images" and pushing away the "artifact differences between real and forged samples" in the feature space, the forgery discrimination boundary learned by the model becomes more robust.
+
