@@ -34,7 +34,7 @@ The code structure of this repository is carefully organized. Below are the func
 
 *   **`train.py`**
     *   🔥 **Model Training Entry Point**. Responsible for initializing the model, loading data, and executing the training loop.
-*   **`validation.py`**
+*   **`test.py`**
     *   📊 **Validation & Evaluation**. Used to evaluate model performance on the test set and calculate metrics such as accuracy.
 *   **`inference_single.py`**
     *   🖼️ **Single Image Inference**. Performs rapid forgery detection on a single image and outputs the authenticity probability.
@@ -103,4 +103,5 @@ The code structure of this repository is carefully organized. Below are the func
 In terms of overall structure, UAG uses common Convolutional Networks or Vision Transformers as feature extraction backbones, on top of which it explicitly models the differences between **forgery artifact features** and **real content features**. Through specialized branches and constraints, the framework encourages the network to focus on forgery clues that are difficult for the human eye to perceive directly, such as high-frequency details, texture distortions, and statistical inconsistencies.
 
 To improve cross-generator and cross-domain generalization capabilities, UAG introduces multi-source data mixing and differential contrast strategies during training: on the one hand, the model is jointly optimized on samples from different synthesis methods and various resolution/quality conditions; on the other hand, by explicitly pulling closer the "structural similarity between real images" and pushing away the "artifact differences between real and forged samples" in the feature space, the forgery discrimination boundary learned by the model becomes more robust.
+
 
